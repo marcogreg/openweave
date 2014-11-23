@@ -1,0 +1,32 @@
+<h1>Aggiungi nuovo utente</h1>
+<form role="form">
+    <div class="form-group">
+        <label>Name</label>
+        {{input value=this.name class="form-control" }}
+    </div>
+    <div class="form-group">
+        <label>Surname</label>
+        {{input value=this.surname class="form-control" }}
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        {{input value=this.email class="form-control" }}
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        {{textarea value=this.description class="form-control" }}
+    </div>
+    <div class="form-group">
+        <label>Projects Sent</label>
+        {{input value=this.projects class="form-control" disabled="disabled" }}
+    </div>
+    <div class="form-group">
+        <label>Projects Win</label>
+        {{input value=this.win class="form-control" disabled="disabled" }}
+    </div>
+
+    <button type="submit" class="btn btn-default" {{action 'save'}} >Save</button>
+
+</form>
+
+{{outlet}}

@@ -1,0 +1,55 @@
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Designers
+        </h1>
+        <ol class="breadcrumb">
+
+        		{{#link-to 'index' tagName="li" replace=true  }}
+             <i class="fa fa-fw fa-dashboard"></i><a> Dashboard</a>
+            {{/link-to}}
+            {{#link-to 'contests' tagName="li" replace=true  }}
+             <i class="fa fa-fw fa-users"></i> Designers 
+            {{/link-to}}
+        </ol>
+    </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-lg-12">
+      <div class="table-responsive">
+          <table class="table table-bordered table-hover table-striped">
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th></th>
+                      <th>Name</th>
+                      <th>N. Projects</th>
+                      <th>Project Win</th>
+                  </tr>
+              </thead>
+              <tbody>
+
+              	{{#each model}}
+              		<tr class="">
+                      <td valign="middle" width="50"  >{{this.id	}}</td>
+                      <td align="center" valign="middle" width="50" ><img src="{{unbound this.avatar}}" style="border-radius:50%" width="32" /></td>
+                      <td valign="middle">{{#link-to 'user.edit' this}}{{this.name}} {{this.surname}}{{/link-to}}</td>
+                      <td valign="middle">{{this.projects}}</td>
+                      <td valign="middle">{{this.win}}</td>
+                  </tr>
+							 	{{/each}}
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+  	{{outlet}}
+  </div>
+</div>
